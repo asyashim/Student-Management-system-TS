@@ -1,0 +1,1 @@
+{"version":3,"file":"StudentManager.d.ts","sourceRoot":"","sources":["../../src/services/StudentManager.ts"],"names":[],"mappings":"AAAA,OAAO,OAAO,MAAM,mBAAmB,CAAC;AAGxC,cAAM,cAAc;IAChB,OAAO,CAAC,QAAQ,CAAc;IAE9B,UAAU,CAAC,OAAO,EAAC,OAAO,GAAE,IAAI,CAE/B;IAED,cAAc,IAAG,OAAO,EAAE,CAEzB;CACJ;eAEc,cAAc"}
