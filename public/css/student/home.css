@@ -1,0 +1,48 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    text-align: center;
+}
+
+header {
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+}
+
+main {
+    margin-top: 120px;
+}
+
+h1 {
+    font-size: 35px;
+}
+
+p {
+    color: #666;
+    font-size: 18px;
+}
+
+.buttons {
+    margin-top: 30px;
+}
+
+.buttons a {
+    display: inline-block;
+    padding: 12px 30px;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 6px;
+    color: white;
+}
+
+.login-btn {
+    background: #3498db;
+}
+
+.register-btn {
+    background: #27ae60;
+}
+

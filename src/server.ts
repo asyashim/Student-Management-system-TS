@@ -3,6 +3,7 @@ import path from "path";
 import dotenv from "dotenv";
 import connectDB from "./config/database";
 import studentRoutes from "./routes/studentRoutes";
+import adminRoutes from "./routes/adminRoutes";
 
 dotenv.config();
 
@@ -24,9 +25,10 @@ app.use(express.static(path.join(__dirname, "../public")));
 
 // Routes
 app.use("/students", studentRoutes);
+app.use("/admin", adminRoutes);
 
 app.get("/", (req, res) => {
-    res.send("Student Management System is Running!");
+    res.render("student/home");
 });
 
 const PORT = process.env.PORT || 3000;
