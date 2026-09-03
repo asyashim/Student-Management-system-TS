@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+    <link rel="stylesheet" href="/css/admin/viewStudent.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">Student Management</div>
+        <nav>
+            <a href="/admin/dashboard">Home</a>
+            <a href="/admin/students">Students</a>
+            <a href="/admin/students/add">Add Student</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="detail-container">
+
+            <div class="page-header">
+                <h1>Student Details</h1>
+                <a href="/admin/students" class="btn secondary">← Back</a>
+            </div>
+
+            <div class="detail-card">
+
+                <div class="avatar">
+                    <%= student.name.charAt(0).toUpperCase() %>
+                </div>
+
+                <div class="detail-grid">
+
+                    <div class="detail-item">
+                        <span class="label">Full Name</span>
+                        <span class="value"><%= student.name %></span>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="label">Email</span>
+                        <span class="value"><%= student.email %></span>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="label">Age</span>
+                        <span class="value"><%= student.age %></span>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="label">Course</span>
+                        <span class="value"><%= student.course %></span>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="label">Phone</span>
+                        <span class="value"><%= student.phone %></span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Student Management System</p>
+    </footer>
+
+</body>
+</html>
