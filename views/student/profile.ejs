@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile</title>
+
+    <link rel="stylesheet" href="/css/student/profile.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="profile-page">
+
+        <div class="profile-container">
+
+            <!-- Back button -->
+
+            <a href="/student/dashboard" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+                Back to Dashboard
+            </a>
+
+
+            <!-- Profile Header -->
+
+            <div class="profile-header">
+
+                <div class="profile-avatar">
+                    <%= student.name.charAt(0).toUpperCase() %>
+                </div>
+
+                <div>
+                    <h1><%= student.name %></h1>
+
+                    <p>
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        Student
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- Profile Information -->
+
+            <div class="profile-card">
+
+                <div class="card-title">
+
+                    <div>
+                        <h2>Personal Information</h2>
+                        <p>Your registered student details</p>
+                    </div>
+
+                    <i class="fa-solid fa-user"></i>
+
+                </div>
+
+
+                <div class="details-grid">
+
+
+                    <div class="detail">
+
+                        <div class="detail-icon">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+
+                        <div>
+                            <span>Full Name</span>
+                            <strong><%= student.name %></strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail">
+
+                        <div class="detail-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+
+                        <div>
+                            <span>Email Address</span>
+                            <strong><%= student.email %></strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail">
+
+                        <div class="detail-icon">
+                            <i class="fa-solid fa-calendar"></i>
+                        </div>
+
+                        <div>
+                            <span>Age</span>
+                            <strong><%= student.age %> years</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail">
+
+                        <div class="detail-icon">
+                            <i class="fa-solid fa-book"></i>
+                        </div>
+
+                        <div>
+                            <span>Course</span>
+                            <strong><%= student.course %></strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail">
+
+                        <div class="detail-icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+
+                        <div>
+                            <span>Phone Number</span>
+                            <strong><%= student.phone %></strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail">
+
+                        <div class="detail-icon">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+
+                        <div>
+                            <span>Account Status</span>
+                            <strong class="active">Active</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Edit Button -->
+
+                <div class="profile-actions">
+
+                    <a href="/student/profile/edit" class="edit-btn">
+                        <i class="fa-solid fa-pen"></i>
+                        Edit Profile
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+

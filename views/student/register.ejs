@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Registration</title>
+
+    <link rel="stylesheet" href="/css/student/register.css">
+</head>
+
+<body>
+
+    <div class="registration-container">
+
+        <div class="registration-card">
+
+            <div class="header">
+                <h1>Student Registration</h1>
+                <p>Create your student account</p>
+            </div>
+
+            <form action="/student/register" method="POST">
+
+                <!-- Name -->
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your full name"
+                        required
+                    >
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+                </div>
+
+                <!-- Age -->
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input
+                        type="number"
+                        id="age"
+                        name="age"
+                        placeholder="Enter your age"
+                        min="1"
+                        required
+                    >
+                </div>
+
+                <!-- Course -->
+                <div class="form-group">
+                    <label for="course">Course</label>
+                    <select id="course" name="course" required>
+                        <option value="">Select your course</option>
+                        <option value="MERN Stack">MERN Stack</option>
+                        <option value="Full Stack Development">
+                            Full Stack Development
+                        </option>
+                        <option value="Python">Python</option>
+                        <option value="Java">Java</option>
+                        <option value="Data Science">Data Science</option>
+                    </select>
+                </div>
+
+                <!-- Phone -->
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="Enter your phone number"
+                        pattern="[0-9]{10}"
+                        required
+                    >
+                </div>
+
+                <!-- Password -->
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Create a password"
+                        required
+                    >
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        placeholder="Confirm your password"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="register-btn">
+                    Register
+                </button>
+
+            </form>
+
+            <div class="footer">
+                <p>
+                    Already have an account?
+                    <a href="/student/login">Login</a>
+                </p>
+
+                <a href="/student" class="home-link">
+                    ← Back to Home
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

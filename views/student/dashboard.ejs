@@ -1,0 +1,304 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard</title>
+
+    <link rel="stylesheet" href="/css/student/dashboard.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="sidebar">
+
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <div>
+                    <h2>Student</h2>
+                    <span>Portal</span>
+                </div>
+            </div>
+
+
+            <nav class="navigation">
+
+                <a href="/student/dashboard" class="nav-link active">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="/student/profile" class="nav-link">
+                    <i class="fa-solid fa-user"></i>
+                    <span>My Profile</span>
+                </a>
+
+                <a href="#" class="nav-link">
+                    <i class="fa-solid fa-book-open"></i>
+                    <span>Courses</span>
+                </a>
+
+                <a href="#" class="nav-link">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                </a>
+
+            </nav>
+
+
+            <a href="/student/logout" class="logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+        </aside>
+
+
+        <!-- ================= MAIN CONTENT ================= -->
+
+        <main class="main-content">
+
+
+            <!-- TOP HEADER -->
+
+            <header class="top-header">
+
+                <div>
+                    <p class="small-title">STUDENT DASHBOARD</p>
+
+                    <h1>
+                        Welcome back,
+                        <span><%= student.name %></span> 👋
+                    </h1>
+
+                    <p class="subtitle">
+                        Here's what's happening with your account today.
+                    </p>
+                </div>
+
+
+                <div class="profile-mini">
+
+                    <div class="avatar">
+                        <%= student.name.charAt(0).toUpperCase() %>
+                    </div>
+
+                    <div>
+                        <strong><%= student.name %></strong>
+                        <small>Student</small>
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- ================= WELCOME CARD ================= -->
+
+            <section class="welcome-card">
+
+                <div class="welcome-content">
+
+                    <span class="welcome-label">
+                        <i class="fa-solid fa-sparkles"></i>
+                        Welcome to your portal
+                    </span>
+
+                    <h2>
+                        Keep learning,
+                        <%= student.name %>!
+                    </h2>
+
+                    <p>
+                        Manage your profile, courses and student information
+                        from your dashboard.
+                    </p>
+
+                </div>
+
+                <div class="welcome-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+            </section>
+
+
+
+            <!-- ================= SECTION TITLE ================= -->
+
+            <div class="section-header">
+
+                <div>
+                    <h2>My Information</h2>
+
+                    <p>
+                        Your registered student details
+                    </p>
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= STUDENT CARDS ================= -->
+
+            <section class="student-info">
+
+
+                <!-- NAME -->
+
+                <div class="info-card">
+
+                    <div class="card-icon purple">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="card-content">
+
+                        <span>Student Name</span>
+
+                        <h3>
+                            <%= student.name %>
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- EMAIL -->
+
+                <div class="info-card">
+
+                    <div class="card-icon blue">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+
+                    <div class="card-content">
+
+                        <span>Email Address</span>
+
+                        <h3>
+                            <%= student.email %>
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- AGE -->
+
+                <div class="info-card">
+
+                    <div class="card-icon pink">
+                        <i class="fa-solid fa-calendar"></i>
+                    </div>
+
+                    <div class="card-content">
+
+                        <span>Age</span>
+
+                        <h3>
+                            <%= student.age %> years
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- COURSE -->
+
+                <div class="info-card">
+
+                    <div class="card-icon green">
+                        <i class="fa-solid fa-book"></i>
+                    </div>
+
+                    <div class="card-content">
+
+                        <span>Current Course</span>
+
+                        <h3>
+                            <%= student.course %>
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PHONE -->
+
+                <div class="info-card">
+
+                    <div class="card-icon orange">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+
+                    <div class="card-content">
+
+                        <span>Phone Number</span>
+
+                        <h3>
+                            <%= student.phone %>
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- STATUS -->
+
+                <div class="info-card">
+
+                    <div class="card-icon cyan">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+
+                    <div class="card-content">
+
+                        <span>Account Status</span>
+
+                        <h3 class="status">
+                            Active
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
+```

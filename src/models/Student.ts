@@ -6,6 +6,7 @@ interface IStudent {
     age: number;
     course: string;
     phone: string;
+    password: string;
 }
 
 const studentSchema = new Schema<IStudent>(
@@ -31,6 +32,11 @@ const studentSchema = new Schema<IStudent>(
             type: String,
             required: true,
         },
+
+        password:{
+            type:String,
+            required:true,
+        }
     },
     {
         timestamps: true,
