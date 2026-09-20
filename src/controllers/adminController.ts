@@ -140,3 +140,43 @@ export const searchStudents = async (
     }
 };
 
+// DELETE /admin/students/:id
+export const deleteStudent = async (req: Request, res: Response): Promise<void> => {
+    try {
+        await Student.findByIdAndDelete(req.params.id);
+        res.redirect("/admin/students");
+    } catch (error) {
+        console.log(error);
+        res.status(500).send("Failed to delete student");
+    }
+};
+
+
+
+// GET /admin/students/:id/edit
+export const getEditStudent = async (req: Request, res: Response): Promise<void> => {
+    try {
+        const student = await Student.findById(req.params.id);
+        if (!student) {
+            res.status(404).send("Student not found");
+            return;
+        }
+        res.render("admin/editStudent", { student });
+    } catch (error) {
+        console.log(error);
+        res.status(500).send("Server error");
+    }
+};
+
+// POST /admin/students/:id/edit
+export const updateStudent = async (req: Request, res: Response): Promise<void> => {
+    try {
+        const { name, email, age, course, phone } = req.body;
+        await Student.findByIdAndUpdate(req.params.id, { name, email, age, course, phone });
+        res.redirect("/admin/students");
+    } catch (error) {
+        console.log(error);
+        res.status(500).send("Server error");
+    }
+};
+

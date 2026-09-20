@@ -12,7 +12,6 @@
 
     <header>
         <div class="logo">Student Management</div>
-
         <nav>
             <a href="/admin/dashboard">Home</a>
             <a href="/admin/students">Students</a>
@@ -21,27 +20,13 @@
     </header>
 
     <div class="page-header">
+        <h1>All Students</h1>
+    </div>
 
-    <h1>All Students</h1>
-
-   
-
-</div>
-
-<form action="/admin/students/search" method="GET" class="search-form">
-
-    <input
-        type="text"
-        name="query"
-        placeholder="Search by name, email, phone, course..."
-        required
-    >
-
-    <button type="submit">
-        Search
-    </button>
-
-</form>
+    <form action="/admin/students/search" method="GET" class="search-form">
+        <input type="text" name="query" placeholder="Search by name, email, phone, course..." required>
+        <button type="submit">Search</button>
+    </form>
 
     <main>
         <div class="students-container">
@@ -52,16 +37,10 @@
             </div>
 
             <% if (students.length === 0) { %>
-
                 <div class="empty">
-                    <p>
-                        No students found.
-                        <a href="/admin/students/add">Add one now</a>.
-                    </p>
+                    <p>No students found. <a href="/admin/students/add">Add one now</a>.</p>
                 </div>
-
             <% } else { %>
-
                 <table>
                     <thead>
                         <tr>
@@ -74,7 +53,6 @@
                             <th>Action</th>
                         </tr>
                     </thead>
-
                     <tbody>
                         <% students.forEach((student, index) => { %>
                             <tr>
@@ -84,14 +62,18 @@
                                 <td><%= student.age %></td>
                                 <td><%= student.course %></td>
                                 <td><%= student.phone %></td>
-                                <td>
+                                <td class="action-btns">
                                     <a href="/admin/students/<%= student._id %>" class="view-btn">View</a>
+                                    <a href="/admin/students/<%= student._id %>/edit" class="edit-btn">Edit</a>
+                                    <button type="button" class="delete-btn"
+                                        onclick="openModal('<%= student._id %>', '<%= student.name %>')">
+                                        Delete
+                                    </button>
                                 </td>
                             </tr>
                         <% }) %>
                     </tbody>
                 </table>
-
             <% } %>
 
         </div>
@@ -101,6 +83,43 @@
         <p>© 2026 Student Management System</p>
     </footer>
 
-</body>
 
+    <!-- Delete Confirmation Modal -->
+    <div class="modal-overlay" id="deleteModal">
+        <div class="modal">
+
+            <div class="modal-icon">🗑️</div>
+
+            <h2>Delete Student</h2>
+            <p>Are you sure you want to delete <strong id="studentName"></strong>? This action cannot be undone.</p>
+
+            <div class="modal-actions">
+                <button class="cancel-btn" onclick="closeModal()">Cancel</button>
+                <form id="deleteForm" method="POST">
+                    <button type="submit" class="confirm-delete-btn">Yes, Delete</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script>
+        function openModal(id, name) {
+            document.getElementById("studentName").textContent = name;
+            document.getElementById("deleteForm").action = "/admin/students/" + id + "/delete";
+            document.getElementById("deleteModal").classList.add("active");
+        }
+
+        function closeModal() {
+            document.getElementById("deleteModal").classList.remove("active");
+        }
+
+        // Close modal if overlay is clicked
+        document.getElementById("deleteModal").addEventListener("click", function (e) {
+            if (e.target === this) closeModal();
+        });
+    </script>
+
+</body>
 </html>

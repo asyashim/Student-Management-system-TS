@@ -25,6 +25,12 @@
                 <a href="/admin/students" class="btn secondary">← Back</a>
             </div>
 
+            <form action="/admin/students/<%= student._id %>/delete" method="POST"
+      onsubmit="return confirm('Are you sure?')">
+    <button type="submit" class="btn danger">Delete</button>
+</form>
+
+
             <div class="detail-card">
 
                 <div class="avatar">
@@ -57,6 +63,8 @@
                         <span class="label">Phone</span>
                         <span class="value"><%= student.phone %></span>
                     </div>
+                    <a href="/admin/students/<%= student._id %>/edit" class="btn">Edit</a>
+
 
                 </div>
 
